@@ -1,22 +1,21 @@
 # Status do Projeto - GovBRNews MCP Server
 
 **Data:** 17 de Outubro de 2025
-**Versão Atual:** 0.2.0 (Resources)
-**Status:** ✅ **FASE 3 COMPLETA**
+**Versão Atual:** 0.3.0 (Advanced Tools)
+**Status:** ✅ **FASE 4 COMPLETA**
 
 ## Resumo Executivo
 
-O servidor MCP GovBRNews completou a Fase 3, implementando 4 resources MCP para acesso direto a estatísticas e dados estruturados. O projeto agora possui 1 tool funcional e 4 resources, com 48 testes unitários (100% passando) e excelente coverage.
+O servidor MCP GovBRNews completou a Fase 4, implementando 2 tools avançados para análises e descoberta de similaridade. O projeto agora possui 3 tools funcionais e 4 resources, com 61 testes unitários (100% passando) e excelente coverage (~92%).
 
 ## O Que Está Pronto ✅
 
 ### Core Funcional
 - ✅ **FastMCP Server** configurado e rodando
-- ✅ **Tool `search_news`** totalmente funcional
-  - Busca por texto completo
-  - Filtros: agências, período (ano), temas
-  - Ordenação: relevante, mais recentes, mais antigos
-  - Limite configurável (1-100 resultados)
+- ✅ **3 Tools MCP** totalmente funcionais:
+  - `search_news` - Busca textual com filtros avançados (Fase 2)
+  - `get_facets` - Agregações e estatísticas (Fase 4)
+  - `similar_news` - Descoberta de notícias similares (Fase 4)
 - ✅ **4 Resources MCP** implementados (Fase 3):
   - `govbrnews://stats` - Estatísticas gerais do dataset
   - `govbrnews://agencies` - Lista de agências com contagens
@@ -28,11 +27,11 @@ O servidor MCP GovBRNews completou a Fase 3, implementando 4 resources MCP para 
 - ✅ **Logging estruturado**
 
 ### Testes
-- ✅ 48 testes unitários implementados (30 MVP + 18 Resources)
+- ✅ 61 testes unitários implementados (30 MVP + 18 Resources + 13 Advanced Tools)
 - ✅ 100% dos testes passando
 - ✅ Fixtures pytest reutilizáveis
 - ✅ Mocks para Typesense
-- ✅ Coverage estimado: ~90%
+- ✅ Coverage estimado: ~92%
 
 ### Documentação
 - ✅ README.md completo

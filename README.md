@@ -107,6 +107,42 @@ Busque notícias sobre educação publicadas pelo MEC em 2024
 - `limit`: Máximo de resultados (1-100, padrão: 10)
 - `sort`: "relevant", "newest", "oldest"
 
+#### `get_facets` - Agregações e Estatísticas ✅
+
+Obtenha agregações por campos específicos para análises estatísticas.
+
+```
+Mostre quantas notícias cada agência publicou sobre educação
+```
+
+**Parâmetros:**
+- `facet_fields` (obrigatório): Lista de campos ("agency", "published_year", "theme_1_level_1", "category")
+- `query`: Query opcional para filtrar (padrão: "*")
+- `max_values`: Máximo de valores por facet (1-100, padrão: 20)
+
+**Casos de uso:**
+- Distribuição de notícias por agência
+- Volume de publicações por ano
+- Temas mais cobertos em um assunto
+- Categorias mais comuns
+
+#### `similar_news` - Notícias Similares ✅
+
+Encontre notícias similares a uma notícia de referência.
+
+```
+Encontre notícias similares à notícia com ID 254647
+```
+
+**Parâmetros:**
+- `reference_id` (obrigatório): ID da notícia de referência
+- `limit`: Máximo de notícias similares (1-20, padrão: 5)
+
+**Critério de similaridade:**
+- Mesma agência governamental
+- Mesmo tema principal
+- Período temporal próximo
+
 ### Resources Disponíveis ✅
 
 Resources fornecem acesso direto a dados estruturados e estatísticas.
@@ -127,19 +163,6 @@ Taxonomia completa de temas com contagens, útil para entender a distribuição 
 #### `govbrnews://news/{id}`
 Notícia individual completa com todos os metadados (título, conteúdo, agência, data, categoria, tema, URL).
 
-### Funcionalidades Futuras
-
-#### `get_facets` - Agregações e Estatísticas (Planejado)
-
-```
-Mostre quantas notícias cada agência publicou sobre saúde
-```
-
-#### `similar_news` - Notícias Similares (Planejado)
-
-```
-Encontre notícias similares ao ID abc123
-```
 
 ## Exemplos de Uso
 
