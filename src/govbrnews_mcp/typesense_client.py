@@ -148,3 +148,13 @@ class TypesenseClient:
 
 # Singleton instance
 typesense_client = TypesenseClient()
+
+
+def get_typesense_client() -> TypesenseClient:
+    """
+    Get the singleton Typesense client instance.
+
+    Returns:
+        TypesenseClient instance
+    """
+    return typesense_client
