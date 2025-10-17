@@ -94,12 +94,13 @@ def format_search_results(results: dict[str, Any]) -> str:
     return "".join(output)
 
 
-def format_facets_results(results: dict[str, Any]) -> str:
+def format_facets_results(results: dict[str, Any], query: str = "*") -> str:
     """
     Format faceted search results for LLM consumption.
 
     Args:
         results: Raw Typesense faceted search response
+        query: Optional query string to display in header
 
     Returns:
         Markdown-formatted string with facet counts
@@ -110,6 +111,12 @@ def format_facets_results(results: dict[str, Any]) -> str:
         return "Nenhuma agregação disponível."
 
     output = ["# Agregações\n\n"]
+
+    # Add query info if not wildcard
+    if query != "*":
+        total_found = results.get("found", 0)
+        output.append(f"**Query:** `{query}`\n")
+        output.append(f"**Total encontrado:** {total_found:,} notícias\n\n")
 
     for facet in facet_counts:
         field_name = facet.get("field_name", "")
