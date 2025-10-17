@@ -4,6 +4,16 @@ import logging
 from mcp.server.fastmcp import FastMCP
 
 from .tools.search import search_news
+from .resources import (
+    get_stats,
+    format_stats,
+    get_agencies,
+    format_agencies,
+    get_themes,
+    format_themes,
+    get_news_by_id,
+    format_news,
+)
 from .config import settings
 
 # Configure logging
@@ -25,6 +35,42 @@ logger.info("Initializing GovBRNews MCP Server")
 mcp.tool()(search_news)
 
 logger.info("Registered tools: search_news")
+
+# Register resources using FastMCP decorators
+@mcp.resource("govbrnews://stats")
+def stats_resource() -> str:
+    """Estatísticas gerais do dataset GovBRNews."""
+    stats = get_stats()
+    return format_stats(stats)
+
+
+@mcp.resource("govbrnews://agencies")
+def agencies_resource() -> str:
+    """Lista completa de agências governamentais com contagens."""
+    agencies = get_agencies()
+    return format_agencies(agencies)
+
+
+@mcp.resource("govbrnews://themes")
+def themes_resource() -> str:
+    """Taxonomia completa de temas com contagens."""
+    themes = get_themes()
+    return format_themes(themes)
+
+
+@mcp.resource("govbrnews://news/{news_id}")
+def news_resource(news_id: str) -> str:
+    """
+    Notícia individual completa.
+
+    Args:
+        news_id: ID da notícia no Typesense
+    """
+    news = get_news_by_id(news_id)
+    return format_news(news)
+
+
+logger.info("Registered resources: stats, agencies, themes, news/{id}")
 
 
 def main():
