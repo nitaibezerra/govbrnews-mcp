@@ -1,12 +1,12 @@
 # Status do Projeto - GovBRNews MCP Server
 
-**Data:** 16 de Outubro de 2025
-**Versão Atual:** 0.1.0 (MVP)
-**Status:** ✅ **MVP FUNCIONAL**
+**Data:** 17 de Outubro de 2025
+**Versão Atual:** 0.2.0 (Resources)
+**Status:** ✅ **FASE 3 COMPLETA**
 
 ## Resumo Executivo
 
-O servidor MCP GovBRNews está funcional em sua versão MVP, implementando busca completa de notícias governamentais brasileiras através do Model Context Protocol. O projeto utiliza FastMCP para simplificar o desenvolvimento e já possui 31 testes unitários com ~85% de coverage.
+O servidor MCP GovBRNews completou a Fase 3, implementando 4 resources MCP para acesso direto a estatísticas e dados estruturados. O projeto agora possui 1 tool funcional e 4 resources, com 48 testes unitários (100% passando) e excelente coverage.
 
 ## O Que Está Pronto ✅
 
@@ -17,16 +17,22 @@ O servidor MCP GovBRNews está funcional em sua versão MVP, implementando busca
   - Filtros: agências, período (ano), temas
   - Ordenação: relevante, mais recentes, mais antigos
   - Limite configurável (1-100 resultados)
+- ✅ **4 Resources MCP** implementados (Fase 3):
+  - `govbrnews://stats` - Estatísticas gerais do dataset
+  - `govbrnews://agencies` - Lista de agências com contagens
+  - `govbrnews://themes` - Taxonomia de temas
+  - `govbrnews://news/{id}` - Notícia individual completa
 - ✅ **Cliente Typesense** com error handling robusto
 - ✅ **Formatação Markdown** otimizada para LLMs
 - ✅ **Configuração** via environment variables (Pydantic)
 - ✅ **Logging estruturado**
 
 ### Testes
-- ✅ 31 testes unitários implementados
+- ✅ 48 testes unitários implementados (30 MVP + 18 Resources)
+- ✅ 100% dos testes passando
 - ✅ Fixtures pytest reutilizáveis
 - ✅ Mocks para Typesense
-- ✅ Coverage estimado: ~85%
+- ✅ Coverage estimado: ~90%
 
 ### Documentação
 - ✅ README.md completo

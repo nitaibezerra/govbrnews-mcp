@@ -91,13 +91,15 @@ Adicione ao arquivo de configuração do Claude Desktop:
 
 ### Tools Disponíveis
 
-#### 1. `search_news` - Buscar Notícias
+#### `search_news` - Buscar Notícias ✅
+
+Busca inteligente com filtros avançados no dataset completo.
 
 ```
 Busque notícias sobre educação publicadas pelo MEC em 2024
 ```
 
-Parâmetros:
+**Parâmetros:**
 - `query` (obrigatório): Termos de busca
 - `agencies`: Lista de agências para filtrar
 - `year_from` / `year_to`: Filtro de período
@@ -105,24 +107,39 @@ Parâmetros:
 - `limit`: Máximo de resultados (1-100, padrão: 10)
 - `sort`: "relevant", "newest", "oldest"
 
-#### 2. `get_facets` - Agregações e Estatísticas
+### Resources Disponíveis ✅
+
+Resources fornecem acesso direto a dados estruturados e estatísticas.
+
+#### `govbrnews://stats`
+Estatísticas gerais do dataset, incluindo:
+- Total de documentos
+- Distribuição por ano
+- Top 5 agências
+- Período de cobertura
+
+#### `govbrnews://agencies`
+Lista completa de agências governamentais com contagens de notícias, ordenada por volume de publicações.
+
+#### `govbrnews://themes`
+Taxonomia completa de temas com contagens, útil para entender a distribuição de conteúdo.
+
+#### `govbrnews://news/{id}`
+Notícia individual completa com todos os metadados (título, conteúdo, agência, data, categoria, tema, URL).
+
+### Funcionalidades Futuras
+
+#### `get_facets` - Agregações e Estatísticas (Planejado)
 
 ```
 Mostre quantas notícias cada agência publicou sobre saúde
 ```
 
-#### 3. `similar_news` - Notícias Similares
+#### `similar_news` - Notícias Similares (Planejado)
 
 ```
 Encontre notícias similares ao ID abc123
 ```
-
-### Resources Disponíveis
-
-- `govbrnews://stats` - Estatísticas gerais do dataset
-- `govbrnews://agencies` - Lista de agências com contagens
-- `govbrnews://themes` - Taxonomia de temas
-- `govbrnews://news/{id}` - Notícia individual completa
 
 ## Exemplos de Uso
 
