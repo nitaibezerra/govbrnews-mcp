@@ -143,6 +143,69 @@ Encontre notícias similares à notícia com ID 254647
 - Mesmo tema principal
 - Período temporal próximo
 
+#### `analyze_temporal` - Análise Temporal com Granularidade Configurável ✅
+
+Analise distribuição temporal de notícias com três níveis de granularidade.
+
+```
+Mostre a evolução mensal de notícias sobre educação em 2025
+```
+
+**Parâmetros:**
+- `query` (obrigatório): Termo de busca
+- `granularity`: "yearly", "monthly" (recomendado), ou "weekly"
+- `year_from` / `year_to`: Filtro de período (opcional)
+- `max_periods`: Máximo de períodos (padrão: 24)
+
+**Granularidades:**
+- **yearly**: Distribuição anual (máx 50 anos) - Para tendências de longo prazo
+- **monthly**: Distribuição mensal (máx 60 meses) - **RECOMENDADO** - Balance ideal
+- **weekly**: Distribuição semanal (máx 52 semanas) - Para análises recentes
+
+**Casos de uso:**
+- Identificar tendências e padrões temporais
+- Detectar sazonalidade
+- Analisar impacto de eventos específicos
+- Comparar períodos
+
+### Prompts Disponíveis ✅
+
+Prompts são análises guiadas que combinam múltiplos tools automaticamente para criar insights profundos.
+
+#### `analyze_theme` - Análise Completa de Tema
+
+Análise multidimensional de um tema específico, incluindo volume, evolução temporal, principais agências, temas relacionados e notícias mais relevantes.
+
+```
+Analise completamente o tema "educação"
+```
+
+#### `compare_agencies` - Comparação Entre Agências
+
+Comparação detalhada entre 2+ agências governamentais, analisando volumes, distribuição temporal, temas, e diferenças de cobertura.
+
+```
+Compare MEC e INEP
+Compare MMA, IBAMA e ICMBio sobre meio ambiente
+```
+
+#### `temporal_evolution` - Evolução Temporal Multiescala
+
+Análise temporal profunda combinando três granularidades (anual, mensal, semanal) para entender trajetória completa de um tema.
+
+```
+Mostre a evolução de "COP30" ao longo do tempo
+Evolução de "educação" de 2020 a 2025
+```
+
+#### `discover_context` - Descoberta Contextual de Notícia
+
+Investigação contextual profunda em torno de uma notícia específica, incluindo notícias similares, histórico do tema, e panorama temporal.
+
+```
+Me explique o contexto da notícia 5043214
+```
+
 ### Resources Disponíveis ✅
 
 Resources fornecem acesso direto a dados estruturados e estatísticas.
