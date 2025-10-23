@@ -3,7 +3,7 @@
 import logging
 from mcp.server.fastmcp import FastMCP
 
-from .tools import search_news, get_facets, similar_news
+from .tools import search_news, get_facets, similar_news, analyze_temporal
 from .resources import (
     get_stats,
     format_stats,
@@ -35,8 +35,9 @@ logger.info("Initializing GovBRNews MCP Server")
 mcp.tool()(search_news)
 mcp.tool()(get_facets)
 mcp.tool()(similar_news)
+mcp.tool()(analyze_temporal)
 
-logger.info("Registered tools: search_news, get_facets, similar_news")
+logger.info("Registered tools: search_news, get_facets, similar_news, analyze_temporal")
 
 # Register resources using FastMCP decorators
 @mcp.resource("govbrnews://stats")
